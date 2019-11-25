@@ -4,21 +4,18 @@ public class WeaponProjectileLauncher : WeaponComponent
 {
     [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private float projectileSpeed = 40f;
-    [SerializeField] private Transform start;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float maxDistance;
 
     private Camera _camera;
 
     private RaycastHit hitInfo;
+    private Transform start;
 
     private void Start()
     {
         _camera = Camera.main;
-        if (start == null)
-        {
-            start = transform;
-        }
+        start = weapon.BarrelEnd ?? transform;
     }
 
     protected override void WeaponFired()

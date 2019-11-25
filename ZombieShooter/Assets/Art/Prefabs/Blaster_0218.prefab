@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 7770113356322854887}
   - component: {fileID: 44001896126208500}
   - component: {fileID: 7997918126968985409}
+  - component: {fileID: 114975473459453328}
   m_Layer: 0
   m_Name: Blaster_0218
   m_TagString: Untagged
@@ -222,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hotKey: 50
   fireDelay: 0.25
+  barrelEnd: {fileID: 5032804236202752822}
 --- !u!114 &2414199622122590255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +364,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   maxDistance: 300
+--- !u!114 &114975473459453328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2860631370673948553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f991c5afcb1cb964bae397604410b29f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 114095652034873388, guid: 95c9572b9dfb45a439e921fba994e8e0, type: 3}
 --- !u!1 &2860631370673948555
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Weapon))]
 public abstract class WeaponComponent : MonoBehaviour
 {
-    Weapon weapon;
+    protected Weapon weapon;
     protected abstract void WeaponFired();
     private void Awake()
     {
