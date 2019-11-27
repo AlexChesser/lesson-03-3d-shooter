@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class WeaponParticle : WeaponComponent
 {
-    [SerializeField] private PooledMonoBehaviour particle;
+    [SerializeField] private ParticleSystem particle;
 
     protected override void WeaponFired()
     {
-        particle.Get<PooledMonoBehaviour>(weapon.BarrelEnd.position, weapon.BarrelEnd.rotation);
+        particle.Play();
     }
 }

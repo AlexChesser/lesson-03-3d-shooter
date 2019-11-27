@@ -9091,7 +9091,6 @@ GameObject:
   - component: {fileID: 4000011123051406}
   - component: {fileID: 198000010555884938}
   - component: {fileID: 199000011589098870}
-  - component: {fileID: 114095652034873388}
   m_Layer: 0
   m_Name: Muzzle Flash
   m_TagString: Untagged
@@ -13624,20 +13623,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &114095652034873388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000013177420064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 725f27c9ad03d104288b0cc571d6392f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialPoolSize: 5
-  delay: 2
 --- !u!1 &1000013366997648
 GameObject:
   m_ObjectHideFlags: 0
