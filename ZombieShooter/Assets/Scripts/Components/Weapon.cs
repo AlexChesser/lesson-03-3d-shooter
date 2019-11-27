@@ -6,6 +6,9 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private KeyCode hotKey;
     [SerializeField] private float fireDelay = 0.25f;
+    [SerializeField] private Transform barrelEnd;
+
+    public Transform BarrelEnd => barrelEnd;
     public KeyCode HotKey => hotKey;
     public event Action OnFire = delegate { };
     public bool IsInAimMode => Input.GetMouseButton(1) == false;

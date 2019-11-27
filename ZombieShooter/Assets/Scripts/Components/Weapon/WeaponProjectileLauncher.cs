@@ -4,27 +4,21 @@ public class WeaponProjectileLauncher : WeaponComponent
 {
     [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private float projectileSpeed = 40f;
-    [SerializeField] private Transform start;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private float maxDistance;
+    [SerializeField] private float maxDistance = 100f;
 
     
 
     private RaycastHit hitInfo;
-
     private void Start()
     {
-        if (start == null)
-        {
-            start = transform;
-        }
+        _camera = Camera.main;
     }
 
     protected override void WeaponFired()
     {
-        Vector3 direction = weapon.IsInAimMode ? GetDirection() : start.forward;
-        Debug.Log($"projectile direction: {direction} - {Quaternion.LookRotation(direction)} - {transform.position}");
-        var projectile = projectilePrefab.Get<Projectile>(transform.position, Quaternion.LookRotation(direction));
+        Vector3 direction = GetDirection();
+        var projectile = projectilePrefab.Get<Projectile>(weapon.BarrelEnd.position, Quaternion.LookRotation(direction));
         projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
     }
 
@@ -36,7 +30,7 @@ public class WeaponProjectileLauncher : WeaponComponent
         {
             target = hitInfo.point;
         }
-        Vector3 direction = target - transform.position;
+        Vector3 direction = target - weapon.BarrelEnd.position;
         direction.Normalize();
         return direction;
     }
