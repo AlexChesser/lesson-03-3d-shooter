@@ -7,12 +7,10 @@ public class WeaponProjectileLauncher : WeaponComponent
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float maxDistance = 100f;
 
-    
-
     private RaycastHit hitInfo;
     private void Start()
     {
-        _camera = Camera.main;
+    
     }
 
     protected override void WeaponFired()
@@ -24,7 +22,7 @@ public class WeaponProjectileLauncher : WeaponComponent
 
     private Vector3 GetDirection()
     {
-        var ray = weapon.Camera.ViewportPointToRay(Vector3.one / 2f);
+        var ray = weapon.GetAim();
         Vector3 target = ray.GetPoint(300f);
         if (Physics.Raycast(ray, out hitInfo, maxDistance, layerMask))
         {

@@ -4715,5 +4715,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725f27c9ad03d104288b0cc571d6392f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialPoolSize: 50
+  initialPoolSize: 1
   delay: 2

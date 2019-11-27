@@ -12,7 +12,7 @@ public class WeaponRaycast : WeaponComponent
 
     protected override void WeaponFired()
     {
-        var ray = weapon.Camera.ViewportPointToRay(Vector3.one / 2f);
+        var ray = weapon.GetAim();
         if (Physics.Raycast(ray, out hitInfo, maxDistance, layerMask)) {
             SpawnDecal(hitInfo.point, hitInfo.normal);
         }

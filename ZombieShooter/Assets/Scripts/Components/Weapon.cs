@@ -18,7 +18,6 @@ public class Weapon : MonoBehaviour
     private Camera _camera;
     private WeaponAmmo ammo;
 
-    public Camera Camera => _camera;
 
     private void Start()
     {
@@ -31,6 +30,10 @@ public class Weapon : MonoBehaviour
             return false;
         }
         return fireTimer > fireDelay;
+    }
+
+    public Ray GetAim() {
+        return _camera.ViewportPointToRay(Vector3.one / 2f);
     }
 
     private void Update()
