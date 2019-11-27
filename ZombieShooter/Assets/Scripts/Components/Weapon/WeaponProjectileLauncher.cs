@@ -8,13 +8,12 @@ public class WeaponProjectileLauncher : WeaponComponent
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float maxDistance;
 
-    private Camera _camera;
+    
 
     private RaycastHit hitInfo;
 
     private void Start()
     {
-        _camera = Camera.main;
         if (start == null)
         {
             start = transform;
@@ -23,14 +22,15 @@ public class WeaponProjectileLauncher : WeaponComponent
 
     protected override void WeaponFired()
     {
-        Vector3 direction = GetDirection();
-        var projectile = projectilePrefab.Get<Projectile>(transform.position, Quaternion.Euler(transform.forward));
+        Vector3 direction = weapon.IsInAimMode ? GetDirection() : start.forward;
+        Debug.Log($"projectile direction: {direction} - {Quaternion.LookRotation(direction)} - {transform.position}");
+        var projectile = projectilePrefab.Get<Projectile>(transform.position, Quaternion.LookRotation(direction));
         projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
     }
 
     private Vector3 GetDirection()
     {
-        var ray = _camera.ViewportPointToRay(Vector3.one / 2f);
+        var ray = weapon.Camera.ViewportPointToRay(Vector3.one / 2f);
         Vector3 target = ray.GetPoint(300f);
         if (Physics.Raycast(ray, out hitInfo, maxDistance, layerMask))
         {

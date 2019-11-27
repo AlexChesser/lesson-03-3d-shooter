@@ -7,6 +7,8 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private Weapon[] weapons;
 
+    public static event Action<Weapon> OnWeaponChanged = delegate { };
+
     void Update()
     {
         foreach (Weapon weapon in weapons) {
@@ -23,5 +25,6 @@ public class Inventory : MonoBehaviour
         {
             weapon.gameObject.SetActive(weapon == weaponToSwitchTo);
         }
+        OnWeaponChanged(weaponToSwitchTo);
     }
 }
