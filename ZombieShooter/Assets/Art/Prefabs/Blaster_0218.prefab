@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 44001896126208500}
   - component: {fileID: 7997918126968985409}
   - component: {fileID: 114975473459453328}
+  - component: {fileID: 114673934672712116}
   m_Layer: 0
   m_Name: Blaster_0218
   m_TagString: Untagged
@@ -377,6 +378,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 2551386824700420989}
+--- !u!114 &114673934672712116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2860631370673948553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7abbff66f09f9e46b5ff3e3e89b25b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decalPrefab: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  damage: 1
 --- !u!1 &2860631370673948555
 GameObject:
   m_ObjectHideFlags: 0
