@@ -8,6 +8,7 @@ public class EnemyNavigation : MonoBehaviour
     private Transform playerTransform;
     private NavMeshPath path;
     private GameObject cube;
+    private Health health;
 
     void Start()
     {
@@ -15,6 +16,23 @@ public class EnemyNavigation : MonoBehaviour
         path = new NavMeshPath();
         cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         cube.GetComponent<Collider>().enabled = false;
+        health = GetComponent<Health>();
+        health.OnDied += Health_OnDied;
+    }
+
+    private void OnDestroy()
+    {
+        health.OnDied -= Health_OnDied;
+    }
+
+    private void OnEnable()
+    {
+        enabled = true;
+    }
+
+    private void Health_OnDied()
+    {
+        enabled = false;
     }
 
     // Update is called once per frame
