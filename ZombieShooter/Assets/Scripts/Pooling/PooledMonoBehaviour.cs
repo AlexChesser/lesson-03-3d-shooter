@@ -28,13 +28,6 @@ public class PooledMonoBehaviour : MonoBehaviour
         return pooledObject;
     }
 
-    protected void OnDestroy()
-    {
-        //foreach (Delegate d in OnReturnToPool.GetInvocationList()) {
-        //    OnReturnToPool -=  (Action<PooledMonoBehaviour>)d;
-        //}
-    }
-
     protected virtual void OnDisable()
     {
         OnReturnToPool?.Invoke(this);

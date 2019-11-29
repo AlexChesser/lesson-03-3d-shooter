@@ -6,6 +6,7 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private float drawWeaponSpeed = 0.2f;
+    [SerializeField] private float delayBeforeWeaponDown = 3f;
     private int idxShooting;
 
     private void Awake()
@@ -25,6 +26,9 @@ public class PlayerAnimation : MonoBehaviour
 
     private IEnumerator FadeToShootingLayer(int reverse = 0)
     {
+        if (reverse == 1) {
+            yield return new WaitForSeconds(delayBeforeWeaponDown);
+        }
         float currentWeight = animator.GetLayerWeight(idxShooting);
         float elapsed = 0;
         while (elapsed < drawWeaponSpeed) {

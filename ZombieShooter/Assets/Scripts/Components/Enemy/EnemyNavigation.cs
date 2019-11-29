@@ -22,7 +22,7 @@ public class EnemyNavigation : MonoBehaviour
 
     private void OnDestroy()
     {
-        health.OnDied -= Health_OnDied;
+        //health.OnDied -= Health_OnDied;
     }
 
     private void OnEnable()

@@ -29,7 +29,7 @@ public class ImpactAudio : MonoBehaviour
 
     private void OnDestroy()
     {
-        health.OnTookHit -= ImpactAudio_OnTookHit;
+        //health.OnTookHit -= ImpactAudio_OnTookHit;
     }
 
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dfc864859f4e61468035b37b8fe048c, type: 3}
-  m_Name: PlayerHit
+  m_Name: HitPlayer
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 852cff6f03d2f614ea4fa6ac25475c1f, type: 3}
