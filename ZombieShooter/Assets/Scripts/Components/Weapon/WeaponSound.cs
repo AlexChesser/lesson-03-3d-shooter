@@ -3,6 +3,7 @@
 [RequireComponent(typeof(AudioSource))]
 public class WeaponSound : WeaponComponent
 {
+    [SerializeField] private SimpleAudioEvent simpleAudio;
     private AudioSource audioSource;
     private void Start()
     {
@@ -10,6 +11,6 @@ public class WeaponSound : WeaponComponent
     }
     protected override void WeaponFired()
     {
-        audioSource.Play();
+        simpleAudio.Play(audioSource);
     }
 }
